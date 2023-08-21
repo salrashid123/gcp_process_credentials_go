@@ -4,10 +4,12 @@ go 1.20
 
 require (
 	cloud.google.com/go/storage v1.10.0
-	github.com/salrashid123/gcp_process_credentials_go v0.0.0
+	// github.com/salrashid123/gcp_process_credentials_go v0.0.0
 	golang.org/x/oauth2 v0.11.0
 	google.golang.org/api v0.43.0
 )
+
+require github.com/salrashid123/gcp_process_credentials_go v0.0.1
 
 require (
 	cloud.google.com/go v0.79.0 // indirect
@@ -28,4 +30,4 @@ require (
 	google.golang.org/protobuf v1.31.0 // indirect
 )
 
-replace github.com/salrashid123/gcp_process_credentials_go => ../
+// replace github.com/salrashid123/gcp_process_credentials_go => ../

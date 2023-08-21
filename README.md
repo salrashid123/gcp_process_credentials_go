@@ -46,17 +46,23 @@ be valid JSON in the form
 
 ```json
 {
-  "access_token": "ya29....",  // the access token
-  "expires_in": 3600,  // how many seconds this token is valid for
-  "token_type": "Bearer"  // usually just a bearer token
+  "access_token": "ya29....",
+  "expires_in": 3600,
+  "token_type": "Bearer"
 }
 ```
+
+* `access_token`: your access token
+* `expires_in`: how many seconds this token is valid for
+* `token_type`:  usually just a bearer token
 
 ### Quickstart
 
 For a quick example in python, the following will read a token file and use that for credentials:
 
 ```golang
+import "github.com/salrashid123/gcp_process_credentials_go"
+
 	extTokenSource, err := sal.ExternalTokenSource(
 		&sal.ExternalTokenConfig{
 			Command: "/usr/bin/cat",
