@@ -35,7 +35,7 @@ func main() {
 	}
 	log.Printf("Token Token: %s\n", tok.AccessToken)
 
-	sts := oauth2.StaticTokenSource(tok)
+	sts := oauth2.ReuseTokenSource(tok, extTokenSource)
 
 	storageClient, err := storage.NewClient(ctx, option.WithTokenSource(sts))
 	if err != nil {

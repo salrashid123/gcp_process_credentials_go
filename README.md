@@ -58,7 +58,7 @@ be valid JSON in the form
 
 ### Quickstart
 
-For a quick example in python, the following will read a token file and use that for credentials:
+For a quick example, the following will read a token file and use that for credentials:
 
 ```golang
 import "github.com/salrashid123/gcp_process_credentials_go"
@@ -73,11 +73,11 @@ import "github.com/salrashid123/gcp_process_credentials_go"
 
 	tok, err := extTokenSource.Token()
 
-	sts := oauth2.StaticTokenSource(tok)
+	sts := oauth2.ReuseTokenSource(tok, extTokenSource)
 	storageClient, err := storage.NewClient(ctx, option.WithTokenSource(sts))
 ```
 
-ofcourse the file  here `/tmp/token.txt` must be the json file format described above
+ofcourse the file  here `/tmp/token.txt` **must** be the json file format described above
 
 ### Parser Interface 
 
